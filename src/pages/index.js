@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Gallery, Image, Overlay } from 'react-stylish-gallery'
+import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
+import Modal from 'react-modal'
 
-const imageGallery = [
+const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160129-4x5-01-A.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160221-4x5-01-F.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160227-4x5-01-E.jpg?raw=true",
@@ -24,25 +25,20 @@ const imageGallery = [
 
 const IndexPage = () => (
   <div>
-    <Gallery withModal>
-      <Image src={imageGallery[0]} alt="Image 1" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[1]} alt="Image 2" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[2]} alt="Image 3" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[3]} alt="Image 4" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[4]} alt="Image 5" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[5]} alt="Image 6" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[6]} alt="Image 7" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[7]} alt="Image 8" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[8]} alt="Image 9" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[9]} alt="Image 10" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[10]} alt="Image 11" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[11]} alt="Image 12" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[12]} alt="Image 13" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[13]} alt="Image 14" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[14]} alt="Image 15" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[15]} alt="Image 16" theme={{ padding: '5px' }}/>
-      <Image src={imageGallery[16]} alt="Image 17" theme={{ padding: '5px' }}/>
-    </Gallery>
+    <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
+      	<Masonry gutter="5px">
+          {images.map((image, i) =>
+            <img key={i} src={image} style={{width: "100%", display: "block"}} />
+          )}
+      	</Masonry>
+  	</ResponsiveMasonry>
+    <Modal
+  isOpen={true}
+  contentLabel="Modal"
+>
+  <h1>Modal Content</h1>
+  <p>Etc.</p>
+</Modal>
   </div>
 )
 
