@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Clark Carter`,
   },
+  pathPrefix: `/clark-carter`,
 }
