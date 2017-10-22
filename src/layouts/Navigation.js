@@ -4,18 +4,19 @@ import Link from 'gatsby-link';
 const style = {
   display: 'inline',
   float: 'right',
-}
-
-const linkStyle = {
-  padding: '0px 5px',
+  textDecoration: 'none',
+  padding: 0,
+  margin: 0,
+  marginRight: 2,
+  color: '#aaa',
+  fontFamily: 'arial',
+  fontWeight: 400
 }
 
 const Navigation = () => {
   return (
     <div style={style}>
-      <Link style={linkStyle} to="/">home</Link>
-      <Link style={linkStyle} to="/about">about</Link>
-      <Link style={linkStyle} to="/contact">contact</Link>
+      <a style={style} href="mailto:clark@clarkcarter.com"><h1 style={style}>Contact</h1></a>
     </div>
   )
 }

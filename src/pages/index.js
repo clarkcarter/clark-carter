@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
-import Modal from 'react-modal'
+import Lightbox from 'react-image-lightbox';
 
 const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160129-4x5-01-A.jpg?raw=true",
@@ -23,23 +23,45 @@ const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170621-120-01-05.jpg?raw=true",
 ]
 
-const IndexPage = () => (
-  <div>
-    <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
-      	<Masonry gutter="5px">
-          {images.map((image, i) =>
-            <img key={i} src={image} style={{width: "100%", display: "block"}} />
-          )}
-      	</Masonry>
-  	</ResponsiveMasonry>
-    <Modal
-  isOpen={true}
-  contentLabel="Modal"
->
-  <h1>Modal Content</h1>
-  <p>Etc.</p>
-</Modal>
-  </div>
-)
+class IndexPage extends React.Component {
+  constructor(props) {
+     super(props);
+     this.state = {
+       photoIndex: 0,
+         isOpen: false
+     };
+   }
+
+  render() {
+    const { photoIndex, isOpen } = this.state;
+    return (
+      <div>
+        <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
+          	<Masonry gutter="5px">
+              {images.map((image, i) =>
+                <img onClick={() => this.setState({ isOpen: true, photoIndex: i })} key={i} src={image} style={{width: "100%", display: "block"}} />
+              )}
+          	</Masonry>
+      	</ResponsiveMasonry>
+        {isOpen &&
+           <Lightbox
+               mainSrc={images[photoIndex]}
+               nextSrc={images[(photoIndex + 1) % images.length]}
+               prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+
+               onCloseRequest={() => this.setState({ isOpen: false })}
+               onMovePrevRequest={() => this.setState({
+                   photoIndex: (photoIndex + images.length - 1) % images.length,
+               })}
+               onMoveNextRequest={() => this.setState({
+                   photoIndex: (photoIndex + 1) % images.length,
+               })}
+               wrapperClassName="image-modal"
+           />
+        }
+      </div>
+    )
+  }
+}
 
 export default IndexPage
