@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
 import Lightbox from 'react-image-lightbox';
 
-const BigImages = [
+const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160129-4x5-01-A.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160221-4x5-01-F.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160227-4x5-01-E.jpg?raw=true",
@@ -21,10 +21,6 @@ const BigImages = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170418-135-01-12.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170430-120-01-10.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170621-120-01-05.jpg?raw=true",
-]
-
-const smallImages = [
-  "",
 ]
 
 class IndexPage extends React.Component {
