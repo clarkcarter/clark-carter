@@ -21,6 +21,7 @@ const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170418-135-01-12.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170430-120-01-10.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/170621-120-01-05.jpg?raw=true",
+"https://github.com/clarkcarter/clark-carter/blob/master/src/images/180126-4x5-04-A-TBC.jpg?raw=true",
 ]
 
 class IndexPage extends React.Component {
