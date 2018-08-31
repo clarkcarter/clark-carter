@@ -5,7 +5,7 @@ import Lightbox from 'react-image-lightbox';
 
 const images = [
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/180126-4x5-01-E.jpg?raw=true",
-"https://github.com/clarkcarter/clark-carter/blob/master/src/images/1180830-4X5-01.jpg?raw=true",
+"https://github.com/clarkcarter/clark-carter/blob/master/src/images/180830-4X5-01.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160129-4x5-01-A.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160221-4x5-01-F.jpg?raw=true",
 "https://github.com/clarkcarter/clark-carter/blob/master/src/images/160227-4x5-01-E.jpg?raw=true",
